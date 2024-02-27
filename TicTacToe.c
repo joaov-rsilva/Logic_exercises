@@ -7,7 +7,7 @@ int ItWon = 0, Moves;
 char Player_1 = 'X';
 char Player_2 = 'O';
 
-void FInitializeBoard(char Board[3][3]);
+void FInitializeBoard(char Board[3][3], int *ItWon, int *Moves);
 void FShowBoard(char Board[3][3]);
 int FCheckPosition(char Board[3][3], int i, int j);
 int FCheckWinner(char Board[3][3], char Player, int Play);
@@ -16,7 +16,7 @@ int main(){
 
     char PlayAgain = 'n';
     do{
-        FInitializeBoard(GameBoard);
+        FInitializeBoard(GameBoard, &ItWon, &Moves);
         do{
             int i, j;
             FShowBoard(GameBoard);
@@ -64,9 +64,9 @@ int main(){
     return 0;
 }
 
-void FInitializeBoard(char Board[3][3]){
-    ItWon = 0;
-    Moves = 0;
+void FInitializeBoard(char Board[3][3], int *ItWon, int *Moves){
+    *ItWon = 0;
+    *Moves = 0;
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
             Board[i][j] = ' ';
