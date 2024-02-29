@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-int F_CPFChecker(char F_cpf[]);
+int Is_valid_CPF(char F_cpf[]);
 
 int main(){
 
-    char CPF[12];
+    char CPF[20];
 
     printf("Enter the CPF to be consulted: ");
     fgets(CPF, sizeof(CPF), stdin);
 
-    if(F_CPFChecker(CPF)){
+    if(Is_valid_CPF(CPF)){
         printf("\nThe CPF %s is VALID.\n", CPF);
     }else{
         printf("\nThe CPF %s is INVALID.\n", CPF);
@@ -20,7 +20,7 @@ int main(){
     return 0;
 }
 
-int F_CPFChecker(char F_cpf[]){
+int Is_valid_CPF(char F_cpf[]){
 
     int flag, result[10], first_digit = 0, second_digit = 0;
 
